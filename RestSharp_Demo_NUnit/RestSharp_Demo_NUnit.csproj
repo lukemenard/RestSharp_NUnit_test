@@ -21,6 +21,7 @@
     <Folder Include="Utilities\" />
     <Folder Include="Features\" />
     <Folder Include="Steps\" />
+    <Folder Include="Base\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Features\GetPosts.feature">
@@ -28,10 +29,5 @@
       <LastGenOutput>GetPosts.feature.cs</LastGenOutput>
       <Visible>False</Visible>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <SpecFlowObsoleteCodeBehindFiles Update="Features\GetPosts.feature.cs">
-      <DependentUpon>GetPosts.feature</DependentUpon>
-    </SpecFlowObsoleteCodeBehindFiles>
   </ItemGroup>
 </Project>
