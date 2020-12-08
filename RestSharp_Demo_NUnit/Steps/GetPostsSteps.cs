@@ -19,7 +19,6 @@ namespace RestSharp_Demo_NUnit.Steps
         [Given(@"I perform GET operation for ""(.*)""")]
         public void GivenIPerformGETOperationFor(string url)
         {
-            _settings.RestClient.BaseUrl = new System.Uri("http://localhost:3000");
             _settings.Request = new RestRequest(url, Method.GET);
         }
 

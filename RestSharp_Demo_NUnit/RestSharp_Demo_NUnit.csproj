@@ -22,6 +22,7 @@
     <Folder Include="Features\" />
     <Folder Include="Steps\" />
     <Folder Include="Base\" />
+    <Folder Include="Hooks\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Features\GetPosts.feature">
