@@ -58,15 +58,17 @@ namespace RestSharp_Demo_NUnit
 
             var request = new RestRequest("posts", Method.POST);
 
-            request.AddJsonBody(new Posts() { id = "17", author = "Execute Automation", title = "RestSharp demo course" });
+            request.AddJsonBody(new Posts() { id = "20", author = "Execute Automation", title = "RestSharp demo course" });
 
-            var response = client.Execute(request);
+            var response = client.Execute<Posts>(request);
 
-            var deserialize = new JsonDeserializer();
-            var output = deserialize.Deserialize<Dictionary<string, string>>(response);
-            var result = output["author"];
+            //var deserialize = new JsonDeserializer();
+            //var output = deserialize.Deserialize<Dictionary<string, string>>(response);
+            //var result = output["author"];
 
-            Assert.That(result, Is.EqualTo("Execute Automation"), "Author is not correct");
+            Assert.That(response.Data.author, Is.EqualTo("Execute Automation"), "Author is not correct");
         }
+
+
     }
 }
