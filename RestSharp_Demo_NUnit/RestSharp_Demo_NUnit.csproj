@@ -12,10 +12,26 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="RestSharp" Version="106.11.7" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="SpecFlow" Version="3.5.14" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.5.14" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Utilities\" />
+    <Folder Include="Features\" />
+    <Folder Include="Steps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Features\GetPosts.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetPosts.feature.cs</LastGenOutput>
+      <Visible>False</Visible>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Update="Features\GetPosts.feature.cs">
+      <DependentUpon>GetPosts.feature</DependentUpon>
+    </SpecFlowObsoleteCodeBehindFiles>
   </ItemGroup>
 </Project>

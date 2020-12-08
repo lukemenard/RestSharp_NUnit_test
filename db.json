@@ -1,0 +1,373 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "Karthik KK"
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "author": "Karthik KK"
+    },
+    {
+      "title": "RestAssured course",
+      "author": "Brandon",
+      "id": 3
+    },
+    {
+      "title": "RestAssured course",
+      "author": "Karthik KK",
+      "id": 4
+    },
+    {
+      "title": "RestAssured course",
+      "author": "Karthik KK",
+      "id": 5
+    },
+    {
+      "title": "RestAssured course",
+      "author": "ExecuteAutomation",
+      "id": 6
+    },
+    {
+      "title": "RestAssured course",
+      "author": "Karthik KK",
+      "id": 7
+    },
+    {
+      "title": "RestAssured course",
+      "author": "Karthik KK",
+      "id": 8
+    },
+    {
+      "title": "RestAssured course",
+      "author": "Karthik KK",
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": "16",
+      "title": "RestSharp demo course",
+      "author": "Execute Automation"
+    },
+    {
+      "id": "17",
+      "title": "RestSharp demo course",
+      "author": "Execute Automation"
+    },
+    {
+      "id": "18",
+      "title": "RestSharp demo course",
+      "author": "Execute Automation"
+    },
+    {
+      "id": "19",
+      "title": "RestSharp demo course",
+      "author": "Execute Automation"
+    },
+    {
+      "id": "20",
+      "title": "RestSharp demo course",
+      "author": "Execute Automation"
+    },
+    {
+      "id": "22",
+      "title": "RestSharp demo course",
+      "author": "Execute Automation"
+    },
+    {
+      "id": "23",
+      "title": "RestSharp demo course",
+      "author": "Execute Automation"
+    },
+    {
+      "id": "25",
+      "title": "RestSharp demo course",
+      "author": "Execute Automation"
+    },
+    {
+      "id": "24",
+      "title": "RestSharp demo course",
+      "author": "Execute Automation"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "Raj",
+    "postId": "1"
+  },
+  "address": {
+    "primary": [
+      {
+        "city": "Auckland",
+        "State": "Auckland",
+        "Country": "New Zealand",
+        "PinCode": 1010
+      },
+      {
+        "city": "Queenstown",
+        "State": "Queenstown",
+        "Country": "New Zealand",
+        "PinCode": 34232
+      }
+    ],
+    "secondary": [
+      {
+        "city": "Chennai",
+        "State": "Tamil Nadu",
+        "Country": "India",
+        "PinCode": 600100
+      }
+    ]
+  },
+  "location": [
+    {
+      "id": 1,
+      "city": "chennai",
+      "country": "india",
+      "address": [
+        {
+          "street": "1st street",
+          "flat_no": "4A",
+          "pincode": 321421,
+          "type": "primary"
+        },
+        {
+          "street": "1st street",
+          "flat_no": "4A",
+          "pincode": 321421,
+          "type": "secondary"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": {
+        "street": "Auckland Central",
+        "flat_no": "140",
+        "pincode": 1231
+      }
+    },
+    {
+      "id": 3,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "city": "Auckland",
+      "country": "NZ",
+      "address": [
+        {
+          "street": "12th New Lynn",
+          "flat_no": "121A",
+          "pincode": 629,
+          "type": "primary"
+        }
+      ]
+    }
+  ],
+  "complexdata": {
+    "page": 2,
+    "per_page": 3,
+    "total": 12,
+    "total_pages": 4,
+    "data": [
+      {
+        "id": 4,
+        "email": "eve.holt@reqres.in",
+        "first_name": "Eve",
+        "last_name": "Holt",
+        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+      },
+      {
+        "id": 5,
+        "email": "charles.morris@reqres.in",
+        "first_name": "Charles",
+        "last_name": "Morris",
+        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+      },
+      {
+        "id": 6,
+        "email": "tracey.ramos@reqres.in",
+        "first_name": "Tracey",
+        "last_name": "Ramos",
+        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+      }
+    ]
+  }
+}

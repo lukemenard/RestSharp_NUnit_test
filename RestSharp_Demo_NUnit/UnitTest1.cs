@@ -80,7 +80,7 @@ namespace RestSharp_Demo_NUnit
 
             //var response = client.ExecuteAsync<Posts>(request);
 
-            var response = client.ExecuteAsyncRequest<Posts>(request).GetAwaiter().GetResult();
+            var response = client.ExecutePostAsync<Posts>(request).GetAwaiter().GetResult();
 
             Assert.That(response.Data.author, Is.EqualTo("Execute Automation"), "Author is not correct");
         }

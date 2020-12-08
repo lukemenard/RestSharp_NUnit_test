@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using RestSharp.Serialization.Json;
 
@@ -15,6 +16,12 @@ namespace RestSharp_Demo_NUnit.Utilities
         {
             var JSONObj = new JsonDeserializer().Deserialize<Dictionary<string, string>>(restResponse);
             return JSONObj;
+        }
+
+        public static string GetResponseObject(this IRestResponse response, string responseObject)
+        {
+            JObject obs = JObject.Parse(response.Content);
+            return obs[responseObject].ToString();
         }
 
 
