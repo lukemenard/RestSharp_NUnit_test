@@ -6,6 +6,7 @@ using NUnit.Framework;
 using Newtonsoft.Json.Linq;
 using RestSharp_Demo_NUnit.Model;
 using System.Threading.Tasks;
+using RestSharp_Demo_NUnit.Utilities;
 
 namespace RestSharp_Demo_NUnit
 {
@@ -45,9 +46,7 @@ namespace RestSharp_Demo_NUnit
 
             var response = client.Execute(request);
 
-            var deserialize = new JsonDeserializer();
-            var output = deserialize.Deserialize<Dictionary<string, string>>(response);
-            var result = output["name"];
+            var result = response.DeserializeResponse()["name"];
 
             Assert.That(result, Is.EqualTo("Raj"), "Author is not correct");
         }
@@ -81,27 +80,9 @@ namespace RestSharp_Demo_NUnit
 
             //var response = client.ExecuteAsync<Posts>(request);
 
-            var response = ExecuteAsyncRequest<Posts>(client, request).GetAwaiter().GetResult();
+            var response = client.ExecuteAsyncRequest<Posts>(request).GetAwaiter().GetResult();
 
             Assert.That(response.Data.author, Is.EqualTo("Execute Automation"), "Author is not correct");
-        }
-
-        private async Task<IRestResponse<T>> ExecuteAsyncRequest<T>(RestClient client, IRestRequest request) where T: class, new()
-        {
-            var taskCompletionSource = new TaskCompletionSource<IRestResponse<T>>();
-
-            client.ExecuteAsync<T>(request, restResponse =>
-            {
-                if (restResponse.ErrorException != null)
-                {
-                    const string message = "Error retrieving response.";
-                    throw new ApplicationException(message, restResponse.ErrorException);
-                }
-
-                taskCompletionSource.SetResult(restResponse);
-            });
-
-            return await taskCompletionSource.Task;
         }
     }
 }
