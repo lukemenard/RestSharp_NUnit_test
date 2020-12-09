@@ -24,12 +24,12 @@
     <Folder Include="Steps\" />
     <Folder Include="Base\" />
     <Folder Include="Hooks\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Features\GetPosts.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GetPosts.feature.cs</LastGenOutput>
-      <Visible>False</Visible>
     </None>
   </ItemGroup>
   <ItemGroup>

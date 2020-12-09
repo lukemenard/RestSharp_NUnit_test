@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 using RestSharp_Demo_NUnit.Model;
 using System.Threading.Tasks;
 using RestSharp_Demo_NUnit.Utilities;
+using RestSharp.Authenticators;
 
 namespace RestSharp_Demo_NUnit
 {
@@ -58,7 +59,7 @@ namespace RestSharp_Demo_NUnit
 
             var request = new RestRequest("posts", Method.POST);
 
-            request.AddJsonBody(new Posts() { id = "24", author = "Execute Automation", title = "RestSharp demo course" });
+            request.AddJsonBody(new Posts() { id = "26", author = "Execute Automation", title = "RestSharp demo course" });
 
             var response = client.Execute<Posts>(request);
 
@@ -76,7 +77,7 @@ namespace RestSharp_Demo_NUnit
 
             var request = new RestRequest("posts", Method.POST);
 
-            request.AddJsonBody(new Posts() { id = "25", author = "Execute Automation", title = "RestSharp demo course" });
+            request.AddJsonBody(new Posts() { id = "27", author = "Execute Automation", title = "RestSharp demo course" });
 
             //var response = client.ExecuteAsync<Posts>(request);
 
@@ -84,5 +85,27 @@ namespace RestSharp_Demo_NUnit
 
             Assert.That(response.Data.author, Is.EqualTo("Execute Automation"), "Author is not correct");
         }
+
+        [Test]
+        public void AuthenticationMechanism()
+        {
+            var client = new RestClient("http://localhost:3000/");
+
+            var request = new RestRequest("auth/login", Method.POST);
+
+            request.AddJsonBody(new { email = "karthik@email.com", password = "haha123" });
+            var response = client.ExecutePostAsync(request).GetAwaiter().GetResult();
+            var access_token = response.DeserializeResponse()["access_token"];
+
+            var jwtAuth = new JwtAuthenticator(access_token);
+            client.Authenticator = jwtAuth;
+
+            var getRequest = new RestRequest("posts/{postid", Method.GET);
+            getRequest.AddUrlSegment("postid", 5);
+
+            var result = client.ExecuteAsyncRequest<Posts>(getRequest).GetAwaiter().GetResult();
+            Assert.That(result.Data.author, Is.EqualTo("ExecuteAutomation"), "The author is not correct");
+        }
+
     }
 }
