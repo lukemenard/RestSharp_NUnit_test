@@ -25,6 +25,10 @@
     <Folder Include="Base\" />
     <Folder Include="Hooks\" />
     <Folder Include="Properties\" />
+    <Folder Include="TestData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="TestData\Data.json" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Features\GetPosts.feature">
@@ -43,5 +47,10 @@
     <Compile Update="Features\PostProfile.feature.cs">
       <DependentUpon>PostProfile.feature</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestData\Data.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

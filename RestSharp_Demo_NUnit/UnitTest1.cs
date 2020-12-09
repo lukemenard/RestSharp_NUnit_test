@@ -8,6 +8,8 @@ using RestSharp_Demo_NUnit.Model;
 using System.Threading.Tasks;
 using RestSharp_Demo_NUnit.Utilities;
 using RestSharp.Authenticators;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace RestSharp_Demo_NUnit
 {
@@ -105,6 +107,38 @@ namespace RestSharp_Demo_NUnit
 
             var result = client.ExecuteAsyncRequest<Posts>(getRequest).GetAwaiter().GetResult();
             Assert.That(result.Data.author, Is.EqualTo("ExecuteAutomation"), "The author is not correct");
+        }
+
+        [Test]
+        public void AuthenticationMechanismWithJSONFile()
+        {
+            var client = new RestClient("http://localhost:3000/");
+
+            var request = new RestRequest("auth/login", Method.POST);
+
+            var file = @"TestData\Data.json";
+
+            var jsonData = JsonConvert.DeserializeObject<User>(File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, file)).ToString());
+
+            request.AddJsonBody(jsonData);
+
+            var response = client.ExecutePostAsync(request).GetAwaiter().GetResult();
+            var access_token = response.DeserializeResponse()["access_token"];
+
+            var jwtAuth = new JwtAuthenticator(access_token);
+            client.Authenticator = jwtAuth;
+
+            var getRequest = new RestRequest("posts/{postid", Method.GET);
+            getRequest.AddUrlSegment("postid", 5);
+
+            var result = client.ExecuteAsyncRequest<Posts>(getRequest).GetAwaiter().GetResult();
+            Assert.That(result.Data.author, Is.EqualTo("ExecuteAutomation"), "The author is not correct");
+        }
+
+        private class User
+        {
+            public string email { get; set; }
+            public string password { get; set; }
         }
 
     }
